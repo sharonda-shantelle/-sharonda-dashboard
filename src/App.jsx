@@ -219,6 +219,21 @@ export default function WeeklyDashboard() {
                 letterSpacing: "0.05em",
               }}>{v==="day" ? "Day" : "Week"}</button>
             ))}
+            <button onClick={() => {
+              if (window.confirm("Reset the entire week? This will clear all checkboxes, water, book and non-negotiables.")) {
+                setChecked({});
+                setNnChecked({});
+                setWater({});
+                setBook({});
+              }
+            }} style={{
+              padding: "5px 10px", borderRadius: 16,
+              border: "1px solid rgba(255,100,100,0.4)",
+              background: "rgba(255,80,80,0.15)",
+              color: "#FFB3B3",
+              fontSize: 10, fontFamily: "inherit", cursor: "pointer",
+              letterSpacing: "0.05em",
+            }}>↺ Reset</button>
           </div>
         </div>
 
